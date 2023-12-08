@@ -22,3 +22,5 @@ Console.WriteLine("Awnser 1: " + awnser1 );
 
 string awnser2 = day.Part2(challengeText);
 Console.WriteLine("Awnser 2: " + awnser2 );
+
+var stop = "";
