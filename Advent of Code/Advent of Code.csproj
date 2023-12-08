@@ -8,4 +8,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="2023\TaskText\" />
+  </ItemGroup>
+
 </Project>
