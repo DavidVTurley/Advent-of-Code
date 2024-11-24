@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 namespace Advent_of_Code._2015;
 internal class Day1 : IDay
 {
-    public int Year { get; }
-    public int Day { get; }
+    public int Year { get; } = 2015;
+    public int Day { get; } = 1;
 
     public string Part1()
     {
