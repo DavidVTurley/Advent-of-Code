@@ -1,50 +1,29 @@
 ﻿using Advent_of_Code;
-using Advent_of_Code._2023.Day1;
-using System.Net.Http.Json;
 
-IDay day = new Day2();
+// Get the session code from the Network tab in your browser. It should be in the first message sent
 
-String challengeText = await GetChallengeTextAsync();
+var client = new ConnectionClient("_ga=GA1.2.1378848460.1731953808; _ga_MHSNPJKWC7=GS1.2.1732464456.2.1.1732464868.0.0.0; session=53616c7465645f5f9bb2108d2c274726ba428350d67d3fa284f2a969150e0b57846e856990a99053d1e9f5f345847873eddf19d266825a2daeb2bc1a47cd4f25; _gid=GA1.2.1226660345.1732464456; _gat=1");
 
-string awnser1 = day.Part1(challengeText);
+
+
+
+
+
+
+
+IDay day = new Advent_of_Code._2015.Day1();
+
+
+String challengeText = await client.GetChallengeTextAsync(day);
+
+day.Setup(challengeText);
+
+string awnser1 = day.Part1();
 Console.WriteLine("Awnser 1: " + awnser1 );
 
-string awnser2 = day.Part2(challengeText);
+
+string awnser2 = day.Part2();
 Console.WriteLine("Awnser 2: " + awnser2 );
 
 var stop = "";
 
-async Task<string> GetChallengeTextAsync()
-{
-    String challengeText = "";
-    string baseDirectory = Directory.GetCurrentDirectory();
-    string filePath = baseDirectory + $"/task/{day.Year}/day {day.Day}.txt";
-
-    if (!Directory.Exists(baseDirectory + "/task"))
-    {
-        Directory.CreateDirectory(baseDirectory + "/task");
-    }
-    if (!Directory.Exists(baseDirectory + $"/task/day {day.Year}"))
-    {
-        Directory.CreateDirectory(baseDirectory + $"/task/day {day.Year}");
-    }
-
-    if (File.Exists(filePath))
-    {
-        challengeText = File.ReadAllText(filePath);
-    }
-    else
-    {
-        String sessionCookie = "53616c7465645f5f62eb1bf72c1455b6e7fd41d88352b839481deef27ab0039ab775d5a4e190327268968907c2e005d180181c83e83c3a9e854f3cfb87108c99";
-        HttpClient client = new HttpClient();
-        client.BaseAddress = new Uri(@"https://adventofcode.com/");
-        client.DefaultRequestHeaders.Add("Cookie", $"session={sessionCookie}");
-
-        HttpResponseMessage response = await client.GetAsync($"{day.Year}/day/{day.Day}/input");
-        challengeText = (await response.Content.ReadAsStringAsync()).Trim();
-
-        File.WriteAllText(filePath, challengeText);
-    }
-
-    return challengeText;
-}

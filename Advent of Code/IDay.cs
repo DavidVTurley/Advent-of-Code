@@ -11,8 +11,8 @@ public interface IDay
     public abstract int Day { get; }
 
 
-    public void Setup();
+    public abstract string Part1();
+    public abstract string Part2();
 
-    public string Part1(string task);
-    public string Part2(string task);
+    public abstract void Setup(string task);
 }

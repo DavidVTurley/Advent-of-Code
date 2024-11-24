@@ -13,12 +13,18 @@ internal class Day1 : BaseDay
     public override int Year => 2023;
     public override int Day => 1;
 
-    private string[] lines = [];
+    string[] _task;
 
-    public override string Part1(string task)
+    public override void Setup(string task)
+    {
+        _task = task.Split("\n");
+    }
+
+    private string[] lines = [];
+ 
+    public override string Part1()
     {
         int total = 0;
-        lines = task.Split("\n");
 
         foreach (string line in lines)
         {
@@ -43,7 +49,7 @@ internal class Day1 : BaseDay
         return total.ToString();
     }
 
-    public override string Part2(string task)
+    public override string Part2()
     {
         int total = 0;
         string word = string.Empty;
