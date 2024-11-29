@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using System.Text.RegularExpressions;
 
 namespace Advent_of_Code._2023.Day1;
 internal class Day1 : BaseDay
 {
-    public override int Year => 2023;
-    public override int Day => 1;
+    public override int Year { get; init; } = 2023;
+    public override int Day { get; init; } = 1;
 
     string[] _task;
 

@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Advent_of_Code._2023;
+﻿namespace Advent_of_Code._2023;
 public class Day3 : BaseDay
 {
-    public override int Year => 2023;
-    public override int Day => 3;
+    public override int Year { get; init; } = 2023;
+    public override int Day { get; init; } = 3;
 
 
     public override string Part1()

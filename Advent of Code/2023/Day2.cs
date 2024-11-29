@@ -1,18 +1,9 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Advent_of_Code._2023.Day1;
+﻿namespace Advent_of_Code._2023.Day1;
 internal class Day2 : BaseDay
 {
-    public override int Year => 2023;
+    public override int Year { get; init; } = 2023;
+    public override int Day { get; init; } = 2;
 
-    public override int Day => 2;
     Dictionary<int, Dictionary<string, int>> games = [];
     Dictionary<int, Dictionary<string, int>> gamesSmallest = [];
 

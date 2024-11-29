@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Advent_of_Code;
+﻿namespace Advent_of_Code;
 public interface IDay
 {
-    public abstract int Year { get; }
-    public abstract int Day { get; }
+    public abstract int Year { get; init; }
+    public abstract int Day { get; init; }
 
 
     public abstract string Part1();
